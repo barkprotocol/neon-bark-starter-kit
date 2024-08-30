@@ -1,5 +1,6 @@
 {
-  "name": "neon-t3-starter-kit",
+  "name": "bark-payments-ui",
+  "description": "BARK Payments is a modern payment processing platform designed to simplify transactions for businesses and consumers.",
   "version": "0.1.0",
   "private": true,
   "type": "module",

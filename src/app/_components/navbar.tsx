@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
@@ -13,100 +13,95 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 const components: { title: string; href: string; description: string }[] = [
   {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
+    title: "Home",
+    href: "/",
     description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+      "Explore the main features and benefits of BARK Payments, designed to streamline your payment processing.",
   },
   {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
+    title: "Features",
+    href: "/features",
     description:
-      "For sighted users to preview content available behind a link.",
+      "Discover key features including integration options, security measures, and customizable payment solutions.",
   },
   {
-    title: "Progress",
-    href: "/docs/primitives/progress",
+    title: "Use Cases",
+    href: "/use-cases",
     description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+      "Learn how BARK Payments can be used in real-world scenarios like e-commerce, subscription services, and international transactions.",
   },
   {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
+    title: "Blog",
+    href: "/blog",
+    description: "Read the latest updates, tips, and insights from the BARK Payments team.",
   },
   {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
+    title: "About",
+    href: "/about",
     description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+      "Learn more about BARK Payments, our mission, and the team behind the platform.",
   },
   {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
+    title: "FAQ",
+    href: "/faq",
     description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+      "Find answers to common questions about BARK Payments, including setup, features, and troubleshooting.",
   },
 ];
 
 export function Navbar() {
   return (
-    <header className="sticky top-0 z-50 bg-background/80 backdrop-blur">
+    <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2" prefetch={false}>
           <Image
             src="/icon.png"
             width={40}
             height={40}
-            alt="Logo"
+            alt="BARK Payments Logo"
             className="rounded-full"
           />
-          <span className="font-bold">Neon T3 Starter Kit</span>
+          <span className="font-bold text-primary">BARK Payments</span>
         </Link>
+
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+              <NavigationMenuTrigger>Getting Started</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                   <li className="row-span-3">
                     <NavigationMenuLink asChild>
                       <a
                         className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                        href="/"
+                        href="/getting-started"
                       >
-                        {/* <Icons.logo className="h-6 w-6" /> */}
                         <div className="mb-2 mt-4 text-lg font-medium">
-                          shadcn/ui
+                          BARK Payments Overview
                         </div>
                         <p className="text-sm leading-tight text-muted-foreground">
-                          Beautifully designed components that you can copy and
-                          paste into your apps. Accessible. Customizable. Open
-                          Source.
+                          Get a comprehensive introduction to BARK Payments and how it can enhance your payment processing.
                         </p>
                       </a>
                     </NavigationMenuLink>
                   </li>
-                  <ListItem href="/docs" title="Introduction">
-                    Re-usable components built using Radix UI and Tailwind CSS.
-                  </ListItem>
                   <ListItem href="/docs/installation" title="Installation">
-                    How to install dependencies and structure your app.
+                    Detailed steps to integrate BARK Payments into your system, including prerequisites and configuration.
                   </ListItem>
-                  <ListItem
-                    href="/docs/primitives/typography"
-                    title="Typography"
-                  >
-                    Styles for headings, paragraphs, lists...etc
+                  <ListItem href="/docs/features" title="Features">
+                    In-depth look at the features available, from transaction management to security options.
+                  </ListItem>
+                  <ListItem href="/docs/use-cases" title="Use Cases">
+                    Real-world examples of how BARK Payments is utilized in various industries and applications.
                   </ListItem>
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>
+
             <NavigationMenuItem>
               <NavigationMenuTrigger>Components</NavigationMenuTrigger>
               <NavigationMenuContent>
@@ -123,6 +118,7 @@ export function Navbar() {
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>
+
             <NavigationMenuItem>
               <Link href="/docs" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
@@ -132,8 +128,9 @@ export function Navbar() {
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
+
         <Link href="/auth/signin" className="btn btn-primary">
-          <Button variant={"outline"}>Get Started</Button>
+          <Button variant="outline">Get Started</Button>
         </Link>
       </div>
     </header>

@@ -1,6 +1,5 @@
 import { CalendarIcon, FileTextIcon } from "@radix-ui/react-icons";
-import { BellIcon, Share2Icon } from "lucide-react";
-
+import { BellIcon, Share2Icon, MoneyIcon } from "lucide-react";
 import AnimatedBeamMultipleOutputDemo from "@/components/example/animated-beam-multiple-outputs";
 import AnimatedListDemo from "@/components/example/animated-list-demo";
 import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
@@ -8,50 +7,50 @@ import Marquee from "@/components/magicui/marquee";
 import { Calendar } from "@/components/ui/calendar";
 import { cn } from "@/lib/utils";
 
-const files = [
+const paymentFiles = [
   {
-    name: "bitcoin.pdf",
-    body: "Bitcoin is a cryptocurrency invented in 2008 by an unknown person or group of people using the name Satoshi Nakamoto.",
+    name: "transaction-report.pdf",
+    body: "Comprehensive report of all transactions, including date, amount, and status for detailed financial analysis.",
   },
   {
-    name: "finances.xlsx",
-    body: "A spreadsheet or worksheet is a file made of rows and columns that help sort data, arrange data easily, and calculate numerical data.",
+    name: "payment-invoice.xlsx",
+    body: "Invoice spreadsheets with sortable and filterable payment details for easy record-keeping and management.",
   },
   {
-    name: "logo.svg",
-    body: "Scalable Vector Graphics is an Extensible Markup Language-based vector image format for two-dimensional graphics with support for interactivity and animation.",
+    name: "receipt.svg",
+    body: "PDF format receipt for clear and accessible documentation of payment confirmations.",
   },
   {
-    name: "keys.gpg",
-    body: "GPG keys are used to encrypt and decrypt email, files, directories, and whole disk partitions and to authenticate messages.",
+    name: "refunds.gpg",
+    body: "Encrypted file containing information about refunds issued, ensuring secure handling of sensitive data.",
   },
   {
-    name: "seed.txt",
-    body: "A seed phrase, seed recovery phrase or backup seed phrase is a list of words which store all the information needed to recover Bitcoin funds on-chain.",
+    name: "payment-logs.txt",
+    body: "Log of all payment activities, useful for debugging, auditing, and compliance checks.",
   },
 ];
 
 const features = [
   {
     Icon: FileTextIcon,
-    name: "Save your files",
-    description: "We automatically save your files as you type.",
+    name: "Comprehensive Payment Management",
+    description: "Efficiently manage and review all payment-related documents, including transaction reports and invoices.",
     href: "#",
-    cta: "Learn more",
+    cta: "Explore Features",
     className: "col-span-3 lg:col-span-1",
     background: (
       <Marquee
         pauseOnHover
         className="absolute top-10 [--duration:20s] [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)]"
       >
-        {files.map((f, idx) => (
+        {paymentFiles.map((f, idx) => (
           <figure
             key={idx}
             className={cn(
               "relative w-32 cursor-pointer overflow-hidden rounded-xl border p-4",
               "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
               "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
-              "transform-gpu blur-[1px] transition-all duration-300 ease-out hover:blur-none",
+              "transform-gpu blur-[1px] transition-all duration-300 ease-out hover:blur-none"
             )}
           >
             <div className="flex flex-row items-center gap-2">
@@ -69,10 +68,10 @@ const features = [
   },
   {
     Icon: BellIcon,
-    name: "Notifications",
-    description: "Get notified when something happens.",
+    name: "Real-Time Payment Notifications",
+    description: "Receive instant notifications for all payment-related activities, ensuring you stay updated on every transaction.",
     href: "#",
-    cta: "Learn more",
+    cta: "See It In Action",
     className: "col-span-3 lg:col-span-2",
     background: (
       <AnimatedListDemo className="absolute right-2 top-4 h-[300px] w-[600px] border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105" />
@@ -80,10 +79,10 @@ const features = [
   },
   {
     Icon: Share2Icon,
-    name: "Integrations",
-    description: "Supports 100+ integrations and counting.",
+    name: "Seamless Integrations",
+    description: "Integrate effortlessly with popular payment systems, including USDC and Solana blockchain, for a versatile payment experience.",
     href: "#",
-    cta: "Learn more",
+    cta: "Learn More",
     className: "col-span-3 lg:col-span-2",
     background: (
       <AnimatedBeamMultipleOutputDemo className="absolute right-2 top-4 h-[300px] w-[600px] border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105" />
@@ -91,15 +90,15 @@ const features = [
   },
   {
     Icon: CalendarIcon,
-    name: "Calendar",
-    description: "Use the calendar to filter your files by date.",
+    name: "Transaction Calendar",
+    description: "Utilize our calendar tool to filter and view transactions by specific dates, making it easier to track and manage payments.",
     className: "col-span-3 lg:col-span-1",
     href: "#",
-    cta: "Learn more",
+    cta: "Explore Calendar",
     background: (
       <Calendar
         mode="single"
-        selected={new Date(2022, 4, 11, 0, 0, 0)}
+        selected={new Date()}
         className="absolute right-0 top-10 origin-top rounded-md border transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-105"
       />
     ),
@@ -111,11 +110,9 @@ export default function Benefits() {
     <section id="benefits" className="bg-muted py-20">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            Benefits
-          </h2>
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Benefits</h2>
           <p className="mt-4 text-muted-foreground">
-            Discover the advantages of using our Next.js starter kit.
+            Discover the powerful features and integrations that enhance your payment processing experience, including support for USDC and Solana.
           </p>
         </div>
         <BentoGrid>

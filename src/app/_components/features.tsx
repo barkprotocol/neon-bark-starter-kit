@@ -1,76 +1,107 @@
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  BoltIcon,
-  MoveHorizontal,
-  PuzzleIcon,
-  RocketIcon,
-  ShieldIcon,
-  UsersIcon,
-} from "lucide-react";
+import { ShoppingCartIcon, StoreIcon, GlobeIcon, CreditCardIcon, ShieldIcon, PuzzleIcon } from "lucide-react";
 
-const features = [
+const useCases = [
   {
-    title: "Fast Deployment",
+    title: "Online Retail",
     description:
-      "Deploy your app with ease using our optimized build and deployment process.",
-    icon: <RocketIcon className="h-12 w-12 text-primary" />,
+      "Optimize your online store with seamless payment processing, supporting various payment methods to enhance the shopping experience.",
+    icon: <ShoppingCartIcon className="h-12 w-12 text-primary" />,
   },
   {
-    title: "Customizable",
-    description: "Easily customize the starter kit to fit your specific needs.",
-    icon: <MoveHorizontal className="h-12 w-12 text-primary" />,
+    title: "Subscription Services",
+    description:
+      "Manage recurring payments effortlessly with automated billing and subscription management features, ensuring a smooth user experience.",
+    icon: <CreditCardIcon className="h-12 w-12 text-primary" />,
   },
   {
-    title: "Secure",
+    title: "Global E-Commerce",
     description:
-      "Built with security in mind, ensuring your application is protected.",
-    icon: <ShieldIcon className="h-12 w-12 text-primary" />,
+      "Reach international customers by accepting multiple currencies and payment methods, ensuring a global reach for your business.",
+    icon: <GlobeIcon className="h-12 w-12 text-primary" />,
   },
   {
-    title: "Performant",
+    title: "In-Store Payments",
     description:
-      "Optimized for speed and performance, delivering a lightning-fast user experience.",
-    icon: <BoltIcon className="h-12 w-12 text-primary" />,
-  },
-  {
-    title: "Extensible",
-    description:
-      "Easily extend the functionality of the starter kit with additional components and modules.",
-    icon: <PuzzleIcon className="h-12 w-12 text-primary" />,
-  },
-  {
-    title: "Community-Driven",
-    description:
-      "Benefit from the support and contributions of our active community.",
-    icon: <UsersIcon className="h-12 w-12 text-primary" />,
+      "Integrate with POS systems to facilitate quick and secure in-store transactions, bridging the gap between online and offline sales.",
+    icon: <StoreIcon className="h-12 w-12 text-primary" />,
   },
 ];
 
-export default function Features() {
+const paymentFeatures = [
+  {
+    title: "Multi-Currency Support",
+    description:
+      "Handle transactions in various currencies, providing a localized experience for international customers.",
+    icon: <GlobeIcon className="h-12 w-12 text-primary" />,
+  },
+  {
+    title: "Real-Time Notifications",
+    description:
+      "Receive instant notifications on payment activities to stay updated on transaction statuses and potential issues.",
+    icon: <CreditCardIcon className="h-12 w-12 text-primary" />,
+  },
+  {
+    title: "Fraud Detection",
+    description:
+      "Advanced fraud detection mechanisms to protect against unauthorized transactions and ensure secure payments.",
+    icon: <ShieldIcon className="h-12 w-12 text-primary" />,
+  },
+  {
+    title: "Seamless Integrations",
+    description:
+      "Integrate with major e-commerce platforms and payment gateways effortlessly, expanding your payment capabilities.",
+    icon: <PuzzleIcon className="h-12 w-12 text-primary" />,
+  },
+];
+
+export default function UseCasesAndPayments() {
   return (
-    <section id="features" className="py-20">
+    <section id="use-cases" className="py-20 bg-gray-100">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            Features
+            Use Cases & Payment Features
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Discover the powerful features of this Neon T3 starter kit.
+            Discover how BARK Payments can enhance various business scenarios with advanced payment features and seamless e-commerce integrations.
           </p>
         </div>
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((feature) => (
-            <Card
-              key={feature.title}
-              className="transition-all duration-300 ease-in-out hover:border-black"
-            >
-              <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
-                {feature.icon}
-                <h3 className="text-xl font-bold">{feature.title}</h3>
-                <p className="text-muted-foreground">{feature.description}</p>
-              </CardContent>
-            </Card>
-          ))}
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-2">
+          <div>
+            <h3 className="text-2xl font-bold mb-6">Use Cases</h3>
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-2">
+              {useCases.map((useCase) => (
+                <Card
+                  key={useCase.title}
+                  className="transition-transform transform hover:scale-105 duration-300 ease-in-out hover:border-primary"
+                >
+                  <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
+                    {useCase.icon}
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">{useCase.title}</h3>
+                    <p className="text-muted-foreground text-center">{useCase.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h3 className="text-2xl font-bold mb-6">Payment Features</h3>
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-2">
+              {paymentFeatures.map((feature) => (
+                <Card
+                  key={feature.title}
+                  className="transition-transform transform hover:scale-105 duration-300 ease-in-out hover:border-primary"
+                >
+                  <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
+                    {feature.icon}
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">{feature.title}</h3>
+                    <p className="text-muted-foreground text-center">{feature.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -1,25 +1,25 @@
 import type { Config } from "tailwindcss";
 
-const config = {
-  darkMode: ["class"],
+const config: Config = {
+  darkMode: ["class"], // Enable dark mode with the `class` strategy
   content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
+    "./pages/**/*.{ts,tsx}", // Scan all TypeScript files in the `pages` directory
+    "./components/**/*.{ts,tsx}", // Scan all TypeScript files in the `components` directory
+    "./app/**/*.{ts,tsx}", // Scan all TypeScript files in the `app` directory
+    "./src/**/*.{ts,tsx}", // Scan all TypeScript files in the `src` directory
   ],
-  prefix: "",
+  prefix: "", // No prefix for Tailwind CSS classes
   theme: {
     container: {
-      center: true,
-      padding: "2rem",
+      center: true, // Center the container
+      padding: "2rem", // Add padding of 2rem to the container
       screens: {
-        "2xl": "1400px",
+        "2xl": "1400px", // Set the width for the 2xl screen breakpoint
       },
     },
     extend: {
       colors: {
-        border: "hsl(var(--border))",
+        border: "hsl(var(--border))", // Custom color variables for various states
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
@@ -54,7 +54,7 @@ const config = {
         },
       },
       borderRadius: {
-        lg: "var(--radius)",
+        lg: "var(--radius)", // Custom border-radius values
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
@@ -75,6 +75,6 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config;
+};
 
 export default config;

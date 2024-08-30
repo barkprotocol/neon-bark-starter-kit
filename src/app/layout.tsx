@@ -1,7 +1,7 @@
 import { type ReactNode } from "react";
-
 import { cn } from "@/lib/utils";
 import { Manrope } from "next/font/google";
+import Head from "next/head";
 
 // Styles
 import "@/styles/globals.css";
@@ -24,10 +24,12 @@ const fontBody = Manrope({
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <title>Neon T3 Starter Kit</title>
-      <meta name="description" content="Neon T3 Starter Kit" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link rel="icon" href="/icon.png" />
+      <Head>
+        <title>BARK</title>
+        <meta name="description" content="Web3 Payments" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/icon.png" />
+      </Head>
       <body
         className={cn("antialiased", fontHeading.variable, fontBody.variable)}
       >
